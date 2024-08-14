@@ -86,10 +86,10 @@ main {
   border: 1px solid #ced4da;
   background: #fff;
   max-width: 820px;
-  width: 100%;
+  width: 90.2777777778vw;
   height: 64px;
   padding-left: 32px;
-  color: #ABB5BE;
+  color: #abb5be;
   font-size: 24px;
   line-height: 21px;
   position: absolute;
@@ -120,6 +120,22 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 19px;
+}
+@media screen and (max-width: 631px) {
+  .cards .cards__wrapper {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 19px;
+  }
+}
+@media screen and (max-width: 443px) {
+  .cards .cards__wrapper {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 19px;
+  }
 }
 
 .card {

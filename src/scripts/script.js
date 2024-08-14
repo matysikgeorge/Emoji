@@ -16,8 +16,8 @@ function createCard(arr) {
 
 //forEach, function expression create card(элемент из forEach) push с помощью метода append (куда и что) и вызов функции в аргумент данные data}
 
-function cardRender(data) {
-  // - function render Карточек
+function cardRender(data) { // - function render Карточек
+  cardsWrapperNode.innerHTML = " ";
   data.forEach((element) => {
     const card = createCard(element); // - с помощью переменной card мы обращаемся к функции (createCard на 8 строчке к шаблону) в которой создали шаблон для карточек
     cardsWrapperNode.append(card); //  (куда добавляем?) в нашу cardsWrapperNode (добавляем что?) - значение card (отсылает к каждому element функции - symbol, title, keywords), которое мы определили выше
@@ -36,9 +36,8 @@ function uniqueCard(str) {
 
 function cardFind(event) {
   let result = event.target.value.toLocaleLowerCase().trim();
-  cardsWrapperNode.innerHTML = " ";
-  let result1 = data.filter((el) => el.title.toLocaleLowerCase().includes(result));
-  cardRender(result1);
+  let newData = data.filter((el) => el.title.toLocaleLowerCase().includes(result) || el.keywords.toLocaleLowerCase().includes(result) );
+  cardRender(newData);
 }
 
 cardRender(data);
